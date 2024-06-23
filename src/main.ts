@@ -1,5 +1,6 @@
 
 // Import stylesheets
+import './style.css'
 import { style2 } from './styles.css';
 
 import('redgin')
