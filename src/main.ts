@@ -1,26 +1,15 @@
-
 // Import stylesheets
-import './style.css'
+import './style.css';
 import { style2 } from './styles.css';
+import { injectStyles } from 'redgin';
 
-import('redgin')
-  .then(({ injectStyles }) => {
+// Inject global styles
+const globalStyles = [
+  style2
+];
 
-    // inject global styles
-    const styles = [
-      style2
-    ]
+injectStyles.push(...globalStyles);
 
-    // inject global styles
-    injectStyles.push(...styles)
-   
-
-    // load component
-    import('./counter')
-
-      
-  
-  })
-  .catch((err) => console.log(err))
-
-
+// Dynamically load component
+import('./counter')
+  .catch((err) => console.error('Failed to load component:', err));
